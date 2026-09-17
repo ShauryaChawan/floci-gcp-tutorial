@@ -88,16 +88,12 @@ For Chapter 3 questions, avoid answers that are only command memorization.
 
 A strong answer should explain:
 
-```text
-Problem
-   ↓
-GCP concept
-   ↓
-Resource involved
-   ↓
-How the application interacts with it
-   ↓
-Why that model is useful
+```mermaid
+flowchart TD
+    P[Problem] --> C[GCP concept]
+    C --> R[Resource involved]
+    R --> A[How the application interacts with it]
+    A --> U[Why that model is useful]
 ```
 
 For example, for **"What is Cloud Storage?"**, a strong answer should mention that it is a managed object-storage service, explain buckets and objects, and describe why applications use it for files and other object data.
@@ -106,16 +102,17 @@ For example, for **"What is Cloud Storage?"**, a strong answer should mention th
 
 Explain this architecture in your own words:
 
-```text
-                 Restaurant Application
-                         │
-             ┌───────────┴───────────┐
-             ▼                       ▼
-        Application DB          Cloud Storage
-             │                       │
-       Restaurant metadata       menu.pdf
-       File metadata             logo.png
-                                 food.jpg
+```mermaid
+flowchart TD
+    APP[Restaurant Application]
+    DB[Application DB]
+    CS[Cloud Storage]
+    META[Restaurant metadata\nFile metadata]
+    FILES[menu.pdf\nlogo.png\nfood.jpg]
+    APP --> DB
+    APP --> CS
+    DB --> META
+    CS --> FILES
 ```
 
 Your explanation should cover:
