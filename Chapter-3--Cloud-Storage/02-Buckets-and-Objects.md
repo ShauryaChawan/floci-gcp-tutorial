@@ -16,13 +16,17 @@ Bucket: floci-restaurant-files
 
 The bucket can contain many objects:
 
-```text
-floci-restaurant-files
-│
-├── logo.png
-├── menu.pdf
-├── images/burger.jpg
-└── invoices/2026/001.pdf
+```mermaid
+flowchart TD
+    B[floci-restaurant-files\nBucket]
+    O1[logo.png]
+    O2[menu.pdf]
+    O3[images/burger.jpg]
+    O4[invoices/2026/001.pdf]
+    B --> O1
+    B --> O2
+    B --> O3
+    B --> O4
 ```
 
 A bucket is not the file itself. It is the storage container in which objects are stored.
@@ -168,16 +172,19 @@ Examples include:
 
 Think about it like this:
 
-```text
-                    Bucket
-                      │
-          ┌───────────┴───────────┐
-          │                       │
-     Bucket config            Objects
-                                  │
-                         ┌────────┼────────┐
-                         ▼        ▼        ▼
-                       Obj 1    Obj 2    Obj 3
+```mermaid
+flowchart TD
+    B[Bucket]
+    C[Bucket configuration]
+    O[Objects]
+    O1[Object 1]
+    O2[Object 2]
+    O3[Object 3]
+    B --> C
+    B --> O
+    O --> O1
+    O --> O2
+    O --> O3
 ```
 
 ## 🧩 Example: Restaurant Application
