@@ -19,38 +19,38 @@ Each domain will have its **own Markdown file** containing approximately **25 ca
 
 ## 📚 Domains
 
-| # | Domain | Questions | Status |
-|---|---|---:|---|
-| 01 | 🟢 GCP Fundamentals & Core Concepts | 25 | ⬜ Planned |
-| 02 | 🖥️ Compute Engine | 25 | ⬜ Planned |
-| 03 | 🪣 Cloud Storage | 25 | ⬜ Planned |
-| 04 | 🔥 Firestore | 25 | ⬜ Planned |
-| 05 | 🗄️ Datastore | 25 | ⬜ Planned |
-| 06 | 🐘 Cloud SQL | 25 | ⬜ Planned |
-| 07 | 📊 BigQuery | 25 | ⬜ Planned |
-| 08 | 📨 Pub/Sub | 25 | ⬜ Planned |
-| 09 | ⚙️ Cloud Functions | 25 | ⬜ Planned |
-| 10 | 🚀 Cloud Run | 25 | ⬜ Planned |
-| 11 | ☸️ GKE & Kubernetes | 25 | ⬜ Planned |
-| 12 | 📦 Cloud Tasks | 25 | ⬜ Planned |
-| 13 | ⏰ Cloud Scheduler | 25 | ⬜ Planned |
-| 14 | 🔔 Eventarc | 25 | ⬜ Planned |
-| 15 | 🔐 IAM | 25 | ⬜ Planned |
-| 16 | 👤 Service Accounts & Application Identity | 25 | ⬜ Planned |
-| 17 | 🔑 Secret Manager | 25 | ⬜ Planned |
-| 18 | 🔒 KMS & Encryption | 25 | ⬜ Planned |
-| 19 | 📋 Cloud Logging | 25 | ⬜ Planned |
-| 20 | 📈 Cloud Monitoring & Observability | 25 | ⬜ Planned |
-| 21 | 🌐 GCP Networking & VPC | 25 | ⬜ Planned |
-| 22 | 🏗️ GCP Application Architecture | 25 | ⬜ Planned |
-| 23 | 💰 Billing, Cost & Resource Management | 25 | ⬜ Planned |
-| 24 | 🔥 Firebase & Authentication | 25 | ⬜ Planned |
-| 25 | 🔄 IAM Credentials, STS & Federation | 25 | ⬜ Planned |
-| 26 | 📡 Kafka & Event Streaming | 25 | ⬜ Planned |
-| 27 | 🧪 Troubleshooting & Debugging | 25 | ⬜ Planned |
-| 28 | 🍽️ Real-World System Design Scenarios | 25 | ⬜ Planned |
-| 29 | 🔀 Multi-Service GCP Scenarios | 25 | ⬜ Planned |
-| 30 | 🎯 Advanced GCP Interview Questions | 25 | ⬜ Planned |
+| # | Domain | Questions |
+|---|---|---:|
+| 01 | 🟢 GCP Fundamentals & Core Concepts | 25 |
+| 02 | 🖥️ Compute Engine | 25 |
+| 03 | 🪣 Cloud Storage | 25 |
+| 04 | 🔥 Firestore | 25 |
+| 05 | 🗄️ Datastore | 25 |
+| 06 | 🐘 Cloud SQL | 25 |
+| 07 | 📊 BigQuery | 25 |
+| 08 | 📨 Pub/Sub | 25 |
+| 09 | ⚙️ Cloud Functions | 25 |
+| 10 | 🚀 Cloud Run | 25 |
+| 11 | ☸️ GKE & Kubernetes | 25 |
+| 12 | 📦 Cloud Tasks | 25 |
+| 13 | ⏰ Cloud Scheduler | 25 |
+| 14 | 🔔 Eventarc | 25 |
+| 15 | 🔐 IAM | 25 |
+| 16 | 👤 Service Accounts & Application Identity | 25 |
+| 17 | 🔑 Secret Manager | 25 |
+| 18 | 🔒 KMS & Encryption | 25 |
+| 19 | 📋 Cloud Logging | 25 |
+| 20 | 📈 Cloud Monitoring & Observability | 25 |
+| 21 | 🌐 GCP Networking & VPC | 25 |
+| 22 | 🏗️ GCP Application Architecture | 25 |
+| 23 | 💰 Billing, Cost & Resource Management | 25 |
+| 24 | 🔥 Firebase & Authentication | 25 |
+| 25 | 🔄 IAM Credentials, STS & Federation | 25 |
+| 26 | 📡 Kafka & Event Streaming | 25 |
+| 27 | 🧪 Troubleshooting & Debugging | 25 |
+| 28 | 🍽️ Real-World System Design Scenarios | 25 |
+| 29 | 🔀 Multi-Service GCP Scenarios | 25 |
+| 30 | 🎯 Advanced GCP Interview Questions | 25 |
 
 **Planned coverage: 30 domains × 25 questions = approximately 750 questions.**
 
