@@ -77,12 +77,12 @@ Find your bucket in the output.
 
 At this point:
 
-```text
-Project
-  │
-  └── Bucket
-        │
-        └── No objects yet
+```mermaid
+flowchart TD
+    P[Project]
+    B[Bucket]
+    E[No objects yet]
+    P --> B --> E
 ```
 
 ## 4. Upload the File
@@ -95,14 +95,10 @@ gcloud storage cp hello.txt gs://YOUR-BUCKET-NAME/
 
 Conceptually:
 
-```text
-hello.txt
-    │
-    │ upload
-    ▼
-Cloud Storage bucket
-    │
-    └── hello.txt
+```mermaid
+flowchart LR
+    F[hello.txt] -->|upload| B[Cloud Storage bucket]
+    B --> O[hello.txt object]
 ```
 
 ## 5. List the Object
@@ -161,16 +157,10 @@ Hello Cloud Storage
 
 Now you have completed the round trip:
 
-```text
-Local
-  │
-  │ upload
-  ▼
-Cloud Storage
-  │
-  │ download
-  ▼
-Local
+```mermaid
+flowchart LR
+    L1[Local file] -->|upload| CS[Cloud Storage]
+    CS -->|download| L2[Local downloaded file]
 ```
 
 ## 8. Compare the Files
@@ -239,23 +229,20 @@ This demonstrates how applications can establish logical object-naming conventio
 
 You created and interacted with:
 
-```text
-Bucket
-  │
-  ├── demo/hello.txt
-  └── restaurants/123/invoices/invoice.pdf
+```mermaid
+flowchart TD
+    B[Bucket]
+    O1[demo/hello.txt]
+    O2[restaurants/123/invoices/invoice.pdf]
+    B --> O1
+    B --> O2
 ```
 
 You performed the basic object lifecycle:
 
-```text
-Create/upload
-      ↓
-List/read
-      ↓
-Download
-      ↓
-Delete
+```mermaid
+flowchart LR
+    U[Create / upload] --> R[List / read] --> D[Download] --> X[Delete]
 ```
 
 ## 🧪 Challenge
@@ -293,8 +280,9 @@ This exercise is intended to teach the Cloud Storage resource model and basic wo
 
 When moving to real GCP, the same conceptual workflow remains:
 
-```text
-Bucket → Object → Upload/Read/Delete
+```mermaid
+flowchart LR
+    B[Bucket] --> O[Object] --> A[Upload / Read / Delete]
 ```
 
 But production environments add concerns such as authentication, IAM, billing, bucket location, data protection, lifecycle management, retention, monitoring, and application integration.
