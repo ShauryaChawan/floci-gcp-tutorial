@@ -43,13 +43,13 @@ If these files are stored only on an application server's local disk, the files 
 
 With multiple application servers, this becomes harder to manage:
 
-```text
-                 Load Balancer
-                      │
-             ┌────────┴────────┐
-             ▼                 ▼
-        Application 1      Application 2
-          /uploads           /uploads
+```mermaid
+flowchart TD
+    LB[Load Balancer]
+    A1[Application Server 1\n/uploads]
+    A2[Application Server 2\n/uploads]
+    LB --> A1
+    LB --> A2
 ```
 
 The application now has to deal with questions such as:
@@ -61,18 +61,18 @@ The application now has to deal with questions such as:
 
 Cloud Storage separates **application compute** from **object storage**.
 
-```text
-                 Application
-                      │
-                      ▼
-               Cloud Storage
-                      │
-                  Bucket
-                      │
-             ┌────────┼────────┐
-             ▼        ▼        ▼
-          image     invoice    PDF
-          object     object   object
+```mermaid
+flowchart TD
+    APP[Application]
+    CS[Cloud Storage]
+    B[Bucket]
+    IMG[Image object]
+    INV[Invoice object]
+    PDF[PDF object]
+    APP --> CS --> B
+    B --> IMG
+    B --> INV
+    B --> PDF
 ```
 
 ## 🧠 Object Storage Mental Model
@@ -133,17 +133,17 @@ You will use this notation frequently with the `gcloud storage` CLI.
 
 A common application architecture separates business metadata from file data.
 
-```text
-                 Restaurant Application
-                         │
-             ┌───────────┴───────────┐
-             ▼                       ▼
-        Application DB          Cloud Storage
-             │                       │
-             │                  menu.pdf
-             │                  logo.png
-             ▼                  food.jpg
-       File metadata
+```mermaid
+flowchart TD
+    APP[Restaurant Application]
+    DB[Application DB]
+    CS[Cloud Storage]
+    FILES[menu.pdf\nlogo.png\nfood.jpg]
+    META[File metadata]
+    APP --> DB
+    APP --> CS
+    DB --> META
+    CS --> FILES
 ```
 
 For example, a database record could contain:
@@ -175,20 +175,16 @@ Cloud Storage and Persistent Disk solve different storage problems.
 
 A useful mental model is:
 
-```text
-Compute Engine
-      │
-      └── Persistent Disk
-              │
-              └── OS / filesystem
-
-Application
-      │
-      └── Cloud Storage
-              │
-              ├── images
-              ├── documents
-              └── backups
+```mermaid
+flowchart TD
+    CE[Compute Engine]
+    PD[Persistent Disk]
+    FS[OS / filesystem]
+    APP[Application]
+    CS[Cloud Storage]
+    DATA[Images / documents / backups]
+    CE --> PD --> FS
+    APP --> CS --> DATA
 ```
 
 ## ✅ What You Should Remember
