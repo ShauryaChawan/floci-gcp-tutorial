@@ -38,12 +38,15 @@ gcloud storage buckets list
 
 Conceptually:
 
-```text
-Google Cloud project
-        │
-        ├── Bucket A
-        ├── Bucket B
-        └── Bucket C
+```mermaid
+flowchart TD
+    P[Google Cloud project]
+    A[Bucket A]
+    B[Bucket B]
+    C[Bucket C]
+    P --> A
+    P --> B
+    P --> C
 ```
 
 This operates at the **bucket level**.
@@ -106,15 +109,10 @@ gcloud storage cp ./menu.pdf gs://floci-demo-storage/
 
 The direction is:
 
-```text
-Local machine
-     │
-     │ upload
-     ▼
-Cloud Storage
-     │
-     ▼
-Object
+```mermaid
+flowchart LR
+    L[Local machine] -->|upload| CS[Cloud Storage]
+    CS --> O[Object]
 ```
 
 The `cp` command copies data; the source is local and the destination is the Cloud Storage URI.
@@ -129,12 +127,9 @@ gcloud storage cp gs://YOUR-BUCKET-NAME/hello.txt ./hello.txt
 
 The direction is reversed:
 
-```text
-Cloud Storage
-     │
-     │ download
-     ▼
-Local machine
+```mermaid
+flowchart LR
+    CS[Cloud Storage] -->|download| L[Local machine]
 ```
 
 This is an important detail to understand when reading CLI commands.
@@ -173,22 +168,16 @@ gcloud storage rm gs://floci-demo-storage/menu.pdf
 
 They operate on different levels:
 
-```text
-buckets list
-    │
-    └── Buckets
-
-storage ls
-    │
-    └── Objects/prefixes in a bucket
-
-storage cp
-    │
-    └── Copies object data between locations
-
-storage rm
-    │
-    └── Removes a specified object
+```mermaid
+flowchart TD
+    A[buckets list\nLists buckets]
+    B[storage ls\nLists objects/prefixes]
+    C[storage cp\nCopies object data]
+    D[storage rm\nRemoves an object]
+    A --> AB[Bucket-level resource]
+    B --> BB[Objects/prefixes in a bucket]
+    C --> CB[Source + destination]
+    D --> DB[Specified object]
 ```
 
 ## 🧪 Mini Workflow
@@ -245,16 +234,9 @@ gcloud storage cp ./menu.pdf gs://bucket/menu.pdf
 
 read it as:
 
-```text
-Source:
-./menu.pdf
-
-        │
-        │ copy
-        ▼
-
-Destination:
-gs://bucket/menu.pdf
+```mermaid
+flowchart LR
+    S[Source\n./menu.pdf] -->|copy| D[Destination\ngs://bucket/menu.pdf]
 ```
 
 Once this mental model is clear, other `cp` operations become easier to reason about.
@@ -315,10 +297,11 @@ However, emulator behavior and real Google Cloud behavior are not necessarily id
 
 Always distinguish:
 
-```text
-Learning the GCP API/resource model
-            ≠
-Testing every production GCP behavior
+```mermaid
+flowchart TD
+    M[Learning the GCP API/resource model]
+    N[Testing every production GCP behavior]
+    M -. is not the same as .-> N
 ```
 
 Real GCP can introduce production concerns such as IAM, billing, regional placement, organization policies, networking, retention requirements, and other controls.
