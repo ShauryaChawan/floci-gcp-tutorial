@@ -19,14 +19,37 @@ The chapters are intentionally ordered from fundamentals → individual services
 - Floci vs. real GCP
 
 ### Chapter 02 — Setting Up Your Local GCP Lab
+
+**Before starting this chapter, read the dedicated setup guide:**
+
+👉 [SETUP.md — Floci GCP Setup Guide](./SETUP.md)
+
+The setup guide contains the platform-specific instructions for:
+
+- Windows 11 / PowerShell
+- macOS
+- Linux
+- Docker / Docker Desktop
+- Floci CLI
+- Google Cloud CLI (`gcloud`)
+- Local emulator endpoint configuration
+- Credential-free local development
+- Setup verification
+- Troubleshooting with AI
+
+This chapter is about understanding **what was configured and why**, rather than repeating the installation instructions.
+
+#### Concepts
 - Docker and Floci
 - Google Cloud CLI
 - Local project configuration
 - Emulator endpoints
 - Credential-free local development
+- Understanding `gcloud` configuration
 - Verifying the local environment
+- Local GCP project: `floci-local`
 
-**Hands-on:** Create and verify the local `floci-local` environment.
+**Hands-on:** Verify your local `floci-local` environment and confirm that `gcloud` can communicate with the Floci emulator.
 
 ---
 
