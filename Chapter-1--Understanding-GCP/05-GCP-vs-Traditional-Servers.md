@@ -8,16 +8,17 @@ Cloud computing becomes easier to understand when you compare it with the tradit
 
 Suppose a company wants to run an application using its own physical infrastructure.
 
-The company may need to manage:
+The company may need to manage several areas around a physical server:
 
 ```mermaid
-flowchart TD
-    S[🖥️ Physical Servers]
+flowchart LR
+    S[🖥️ Physical Server]
+
     S --> N[🌐 Networking]
     S --> ST[💾 Storage]
     S --> P[⚡ Power]
     S --> H[🔧 Hardware maintenance]
-    S --> OS[⚙️ Operating systems]
+    S --> OS[⚙️ Operating system]
     S --> B[💿 Backups]
     S --> CP[📈 Capacity planning]
     S --> M[📊 Monitoring]
